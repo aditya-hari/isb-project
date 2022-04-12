@@ -1,0 +1,19 @@
+present = 0
+total_skills = 0
+
+for i in range(1,101):
+	file = open('processed_'+str(i),'r')
+	processed = file.readlines()
+	file.close()
+	file = open('skills_'+str(i),'r')
+	skills = file.readlines()
+	file.close()
+	for j in skills:
+		for k in processed:
+			if j.lower().strip() in k.lower().strip():
+				present+=1
+				break
+		total_skills+=1
+
+
+only 56% of the skills are present as it in JD

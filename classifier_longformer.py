@@ -172,6 +172,7 @@ for epoch in range(EPOCHS):
     train(epoch)
     acc = valid(model, testing_loader)
     if acc > bacc:
+        bacc = acc
         torch.save(model, 'longformer_classifier.pt')
     print("\n")
     print("\n")
